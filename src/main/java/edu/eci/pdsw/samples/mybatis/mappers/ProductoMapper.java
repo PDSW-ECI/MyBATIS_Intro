@@ -19,7 +19,6 @@ package edu.eci.pdsw.samples.mybatis.mappers;
 import edu.eci.pdsw.samples.entities.Producto;
 import java.util.List;
 import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Select;
 
 /**
@@ -37,6 +36,7 @@ public interface ProductoMapper {
     
     @Select("select codigo, nombre, precio from ORD_PRODUCTOS")
     List<Producto> selectAllProducts();
+    
     
 
 

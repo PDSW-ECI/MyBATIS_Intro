@@ -58,8 +58,8 @@ public class MyBatisExample {
         SqlSession sqlss=sessionfact.openSession();
         
         ProductoMapper pmap=sqlss.getMapper(ProductoMapper.class);
-        System.out.println(pmap.selectProduct(1));
-        System.out.println(pmap.selectAllProducts());
+
+        
         
         
     }
@@ -73,9 +73,9 @@ public class MyBatisExample {
      * @throws SQLException 
      */
     public static void registrarNuevoProducto(SqlSession session, int codigo, String nombre,int precio) throws SQLException{
-        //Crear preparedStatement
-        //Asignar parámetros
-        //usar 'execute'
+        
+        //Obtener el 'mapper' correspondiente
+        //Invocar a la función del mapper
         
     }
     
@@ -86,13 +86,10 @@ public class MyBatisExample {
      * @return 
      */
     public static List<String> nombresProductosPedido(SqlSession session, int codigoPedido){
-        List<String> np=new LinkedList<>();
+        List<String> np=null;
         
-        //Crear prepared statement
-        //asignar parámetros
-        //usar executeQuery
-        //Sacar resultados del ResultSet
-        //Llenar la lista y retornarla
+        //Obtener el 'mapper' correspondiente
+        //Invocar a la función del mapper
         
         return np;
     }
@@ -106,10 +103,8 @@ public class MyBatisExample {
      */
     public static int valorTotalPedido(SqlSession session, int codigoPedido){
         
-        //Crear prepared statement
-        //asignar parámetros
-        //usar executeQuery
-        //Sacar resultado del ResultSet
+        //Obtener el 'mapper' correspondiente
+        //Invocar a la función del mapper
         
         return 0;
     }
@@ -124,10 +119,8 @@ public class MyBatisExample {
     public static void cambiarNombreProducto(SqlSession session, int codigoProducto, 
             String nuevoNombre){
         
-        //Crear prepared statement
-        //asignar parámetros
-        //usar executeUpdate
-        //verificar que se haya actualizado exactamente un registro
+        //Obtener el 'mapper' correspondiente
+        //Invocar a la función del mapper
         
         
     }
