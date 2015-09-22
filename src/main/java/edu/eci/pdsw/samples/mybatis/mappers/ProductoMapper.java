@@ -37,7 +37,7 @@ public interface ProductoMapper {
     
     @Select("select codigo, nombre, precio from ORD_PRODUCTOS")
     List<Producto> selectAllProducts();
-
+    
 
 
 }

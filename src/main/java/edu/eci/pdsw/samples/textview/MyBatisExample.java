@@ -19,7 +19,6 @@ package edu.eci.pdsw.samples.textview;
 import edu.eci.pdsw.samples.mybatis.mappers.ProductoMapper;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
@@ -61,6 +60,7 @@ public class MyBatisExample {
         ProductoMapper pmap=sqlss.getMapper(ProductoMapper.class);
         System.out.println(pmap.selectProduct(1));
         System.out.println(pmap.selectAllProducts());
+        
         
     }
     
