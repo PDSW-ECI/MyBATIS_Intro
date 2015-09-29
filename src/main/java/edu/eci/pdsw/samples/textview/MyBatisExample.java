@@ -24,7 +24,11 @@ import edu.eci.pdsw.samples.mybatis.mappers.ProductoMapper;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.Date;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -66,9 +70,48 @@ public class MyBatisExample {
 
         SqlSession sqlss = sessionfact.openSession();
 
+        PedidoMapper pedmp=sqlss.getMapper(PedidoMapper.class);
+        ProductoMapper prodm=sqlss.getMapper(ProductoMapper.class);
+        
+        
+        
+        //DESCOMENTAR SÓLO PARA EL PUNTO 8
+        /*
+        Producto p1=prodm.selectProduct(1);
+        Producto p2=prodm.selectProduct(2);
+        Producto p3=prodm.selectProduct(3);
+        
+        
+        //cambiar el código 112233 por su código de estudiante
+        Pedido ped=new Pedido(112233,new Timestamp(new Date().getTime()));
+        
+        Set<DetallePedido> detped=new LinkedHashSet<>();
+        detped.add(new DetallePedido(1,p1));
+        detped.add(new DetallePedido(1,p2));
+        detped.add(new DetallePedido(1,p3));
+        
+        ped.setDetallesPedido(detped);
+        
+        persistirPedido(ped);
+        
+        sqlss.commit();
+        */
+        
         sqlss.close();
 
+        
+        
     }
 
+    /**
+     * IMPLEMENTE ESTA OPERACIÓN HACIENDO USO DE LAS OPERACIONES
+     * DEFINIDAS EN EL 'MAPPER' DE PEDIDO
+     * 
+     */
+    public static void persistirPedido(SqlSession sqlss, Pedido p){
+        PedidoMapper pedmp=sqlss.getMapper(PedidoMapper.class);
+        
+        
+    }
 
 }

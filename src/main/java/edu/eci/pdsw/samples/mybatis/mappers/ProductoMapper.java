@@ -29,7 +29,7 @@ public interface ProductoMapper {
     
     
     @Insert("insert into ORD_PRODUCTOS (codigo, nombre,precio) values (#{codigo}, #{nombre},#{precio})")
-    void createProduct(Producto product);
+    void insertProduct(Producto product);
     
     @Select("select codigo, nombre, precio from ORD_PRODUCTOS where codigo=#{idprod}")
     Producto selectProduct(int idprod);

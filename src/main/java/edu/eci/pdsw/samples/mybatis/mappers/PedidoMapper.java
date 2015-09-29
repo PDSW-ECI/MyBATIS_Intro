@@ -52,7 +52,7 @@ public interface PedidoMapper {
     Set<DetallePedido> getDetallePedido(int codped);
     
     
-    @Insert("INSERT INTO ORD_PEDIDOS values (codigo,fecha)")          
+    @Insert("INSERT INTO ORD_PEDIDOS values (fecha)")          
     void insertPedido(Pedido p);
     
     
