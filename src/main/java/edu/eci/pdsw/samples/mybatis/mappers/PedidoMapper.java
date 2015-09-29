@@ -16,8 +16,10 @@
  */
 package edu.eci.pdsw.samples.mybatis.mappers;
 
+import edu.eci.pdsw.samples.entities.DetallePedido;
 import edu.eci.pdsw.samples.entities.Pedido;
 import java.util.List;
+import java.util.Set;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
@@ -36,6 +38,16 @@ public interface PedidoMapper {
         }
     )
     List<Pedido> getPedido();
+    
+    
+    
+    @Select("SELECT cantidad,pedido_fk,producto_fk FROM ORD_DETALLES_PEDIDO where pedido_fk=#{codped}")
+    @Results(
+        value={
+            @Result(column="cantidad", property = "cantidad"),
+        }
+    )
+    Set<DetallePedido> getDetallePedido(int codped);
     
     
 }
