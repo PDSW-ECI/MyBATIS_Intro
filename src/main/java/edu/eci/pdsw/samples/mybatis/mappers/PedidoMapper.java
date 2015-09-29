@@ -32,14 +32,14 @@ import org.apache.ibatis.annotations.Select;
  */
 public interface PedidoMapper {
     
-    @Select("SELECT codigo, fecha_radicacion from ORD_PEDIDOS ")
+    @Select("SELECT codigo, fecha_radicacion from ORD_PEDIDOS where codigo=#{codpedido}")
     @Results(
         value={            
             @Result(column = "codigo", property = "codigo"),
             @Result(column = "fecha_radicacion", property = "fecha")
         }
     )
-    List<Pedido> getPedido();
+    Pedido getPedido(int codpedido);
     
     
     
