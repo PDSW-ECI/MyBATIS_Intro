@@ -11,15 +11,15 @@
             <transactionManager type="JDBC" />
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver" />
-                <property name="url" value="jdbc:mysql://desarrollo.is.escuelaing.edu.co:3306/xxxx" />
-                <property name="username" value="xxxx" />
-                <property name="password" value="xxxx" />
+                <property name="url" value="jdbc:mysql://desarrollo.is.escuelaing.edu.co:3306/bdprueba" />
+                <property name="username" value="bdprueba" />
+                <property name="password" value="bdprueba" />
             </dataSource>
         </environment>
     </environments>
         
     <mappers>
-        <package name="falta.completar.esto"/>
+        <package name="edu.eci.pdsw.samples.mybatis.mappers"/>
     </mappers> 
         
 </configuration>

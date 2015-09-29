@@ -16,6 +16,8 @@
  */
 package edu.eci.pdsw.samples.textview;
 
+import edu.eci.pdsw.samples.entities.Pedido;
+import edu.eci.pdsw.samples.mybatis.mappers.PedidoMapper;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
@@ -61,84 +63,16 @@ public class MyBatisExample {
 
         SqlSession sqlss = sessionfact.openSession();
 
-        System.out.println("Valor total pedido 1:" + valorTotalPedido(sqlss, 1));
-
-        List<String> prodsPedido = nombresProductosPedido(sqlss, 1);
-
-        System.out.println("Productos del pedido 1:");
-        System.out.println("-----------------------");
-        for (String nomprod : prodsPedido) {
-            System.out.println(nomprod);
+        PedidoMapper pm=sqlss.getMapper(PedidoMapper.class);
+        
+        for (Pedido p:pm.getPedido()){
+            System.out.println(p);
         }
-        System.out.println("-----------------------");
-
-        int suCodigoECI = 20134423;
-        registrarNuevoProducto(sqlss, suCodigoECI, "SU NOMBRE", 99999999);
+        
         sqlss.commit();
-
-        cambiarNombreProducto(sqlss, suCodigoECI, "EL NUEVO NOMBRE");
-        sqlss.commit();
-
         sqlss.close();
 
     }
 
-    /**
-     * Agregar un nuevo producto con los parámetros dados
-     *
-     * @param con la conexión JDBC
-     * @param codigo
-     * @param nombre
-     * @param precio
-     * @throws SQLException
-     */
-    public static void registrarNuevoProducto(SqlSession session, int codigo, String nombre, int precio) throws SQLException {
-
-        //Obtener el 'mapper' correspondiente
-        //Invocar a la función del mapper
-    }
-
-    /**
-     * Consultar los nombres de los productos asociados a un pedido
-     *
-     * @param con la conexión JDBC
-     * @param codigoPedido el código del pedido
-     * @return
-     */
-    public static List<String> nombresProductosPedido(SqlSession session, int codigoPedido) {
-        List<String> np = null;
-
-        //Obtener el 'mapper' correspondiente
-        //Invocar a la función del mapper
-        return np;
-    }
-
-    /**
-     * Calcular el costo total de un pedido
-     *
-     * @param con
-     * @param codigoPedido código del pedido cuyo total se calculará
-     * @return el costo total del pedido (suma de: cantidades*precios)
-     */
-    public static int valorTotalPedido(SqlSession session, int codigoPedido) {
-
-        //Obtener el 'mapper' correspondiente
-        //Invocar a la función del mapper
-        return 0;
-    }
-
-    /**
-     * Cambiar el nombre de un producto
-     *
-     * @param con
-     * @param codigoProducto codigo del producto cuyo nombre se cambiará
-     * @param nuevoNombre el nuevo nombre a ser asignado
-     */
-    public static void cambiarNombreProducto(SqlSession session, int codigoProducto,
-            String nuevoNombre) {
-
-        //Obtener el 'mapper' correspondiente
-        //Invocar a la función del mapper
-    }
 
 }
