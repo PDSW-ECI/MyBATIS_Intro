@@ -20,6 +20,8 @@ import edu.eci.pdsw.samples.entities.DetallePedido;
 import edu.eci.pdsw.samples.entities.Pedido;
 import java.util.List;
 import java.util.Set;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
@@ -48,6 +50,14 @@ public interface PedidoMapper {
         }
     )
     Set<DetallePedido> getDetallePedido(int codped);
+    
+    
+    @Insert("INSERT INTO ORD_PEDIDOS values (codigo,fecha)")          
+    void insertPedido(Pedido p);
+    
+    
+    @Insert("INSERT INTO ORD_DETALLES_PEDIDO(cantidad,pedido_fk,producto_fk) values(xxxx,yyyyy,zzzzz)")
+    void insertDetallePedido(int codpedido,DetallePedido dp);
     
     
 }

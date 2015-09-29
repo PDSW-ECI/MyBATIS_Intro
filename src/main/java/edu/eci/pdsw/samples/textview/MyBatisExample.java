@@ -16,8 +16,11 @@
  */
 package edu.eci.pdsw.samples.textview;
 
+import edu.eci.pdsw.samples.entities.DetallePedido;
 import edu.eci.pdsw.samples.entities.Pedido;
+import edu.eci.pdsw.samples.entities.Producto;
 import edu.eci.pdsw.samples.mybatis.mappers.PedidoMapper;
+import edu.eci.pdsw.samples.mybatis.mappers.ProductoMapper;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
@@ -63,13 +66,6 @@ public class MyBatisExample {
 
         SqlSession sqlss = sessionfact.openSession();
 
-        PedidoMapper pm=sqlss.getMapper(PedidoMapper.class);
-        
-        for (Pedido p:pm.getPedido()){
-            System.out.println(p);
-        }
-        
-        sqlss.commit();
         sqlss.close();
 
     }
